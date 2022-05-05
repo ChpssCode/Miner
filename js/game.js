@@ -33,5 +33,5 @@ class Game extends Phaser.Scene
     update() {
     shipMovement(this);
     this.speed.setText('Speed: ' + this.ship.body.speed);
-}
+    }
 }

@@ -25,4 +25,10 @@ function shipMovement(refer) {
     {
         refer.ship.setAngularVelocity(0);
     }
+     refer.terra.setInteractive();
+ refer.terra.on("pointerup", () => {
+    refer.water+=1;
+    refer.waterText.setText('Water: ' + refer.water);
+    console.log("Working?")
+})
 }
