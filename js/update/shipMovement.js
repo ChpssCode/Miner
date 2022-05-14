@@ -4,31 +4,27 @@
  */
 
 function shipMovement(refer) {
-   if (refer.keys.W.isDown)
+    if (refer.keys.W.isDown)
     {
-        refer.physics.velocityFromRotation(refer.ship.rotation, 200, refer.ship.body.acceleration);
+       refer.physics.velocityFromRotation(refer.ship.rotation, 200, refer.ship.body.acceleration);
+       refer.ship.setDrag(1.0);
     }
-    else
-    {
-        refer.ship.setAcceleration(0);
+    else {
+         refer.ship.setAcceleration(0);
     }
-
     if (refer.keys.A.isDown)
     {
-        refer.ship.setAngularVelocity(-300);
+       refer.ship.setAngularVelocity(-300);
     }
     else if (refer.keys.D.isDown)
     {
         refer.ship.setAngularVelocity(300);
     }
+    else if(refer.keys.S.isDown) {
+        refer.ship.setDrag(0.5);
+    }
     else
     {
         refer.ship.setAngularVelocity(0);
     }
-     refer.terra.setInteractive();
- refer.terra.on("pointerup", () => {
-    refer.water+=1;
-    refer.waterText.setText('Water: ' + refer.water);
-    console.log("Working?")
-})
 }

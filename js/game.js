@@ -1,10 +1,12 @@
 class Game extends Phaser.Scene
-{
+{   
+
     constructor ()
     {
         super({
             key: "Game"
         });
+        this.last = Date.now()
     }
 
     preload() {
@@ -27,9 +29,11 @@ class Game extends Phaser.Scene
     createKeys(this);
 
     this.speed = this.add.text(32, 32).setScrollFactor(0).setFontSize(16).setColor('#ffffff');
+    this.keysText = this.add.text(32, 64).setScrollFactor(0).setFontSize(16).setColor('#ffffff');
     this.waterText = this.add.text(32, 48).setScrollFactor(0).setFontSize(16).setColor('#ffffff');
+    this.counter = 0;
 
-}
+    }
     update() {
     shipMovement(this);
     this.speed.setText('Speed: ' + this.ship.body.speed);

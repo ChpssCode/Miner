@@ -15,7 +15,7 @@ class Startscreen extends Phaser.Scene
 
     create() {
     this.physics.add.image(955, 380, "logo").setScale(1.4);
-    this.play = this.physics.add.image(955, 575, "play").setScale(0.4);
+    this.play = this.physics.add.image(955, 575, "play").setScale(1);
     this.add.tileSprite(1000, 0, 2000, 2000, "background");
 
     this.play.setInteractive();
