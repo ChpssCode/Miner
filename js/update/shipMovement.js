@@ -4,10 +4,11 @@
  */
 
 function shipMovement(refer) {
-    if (refer.keys.W.isDown)
+    if (refer.keys.W.isDown && refer.fuel > 0)
     {
        refer.physics.velocityFromRotation(refer.ship.rotation, 200, refer.ship.body.acceleration);
-       refer.ship.setDrag(1.0);
+       refer.ship.setDrag(1.0); 
+       refer.fuel-=1;
     }
     else {
          refer.ship.setAcceleration(0);

@@ -14,28 +14,32 @@ class Game extends Phaser.Scene
     }
 
     create() {
+    this.oxygen = 0;
+    this.hydrogen = 0;
+    
+    this.input.setDefaultCursor('url(assets/Cursor.png), pointer');
     //Set Physics
+    createText(this);
     this.physics.world.setBounds(0,0, 2000, 2000, true, true, true, true)
-
+    
     //Set Variables
     this.water = 0;
 
     //Add Objects(Sprites)
     createBackground(this);
     createShip(this);
-    createShopButton(this);
+    createFactoryButton(this);
     createTerra(this);
     
     createKeys(this);
-
-    this.speed = this.add.text(32, 32).setScrollFactor(0).setFontSize(16).setColor('#ffffff');
-    this.keysText = this.add.text(32, 64).setScrollFactor(0).setFontSize(16).setColor('#ffffff');
-    this.waterText = this.add.text(32, 48).setScrollFactor(0).setFontSize(16).setColor('#ffffff');
+    convertWaterToFuel(this);
+    convertHydrogenToFuel(this);
+    this.fuel = 2000;
     this.counter = 0;
 
     }
     update() {
     shipMovement(this);
-    this.speed.setText('Speed: ' + this.ship.body.speed);
+    updateText(this);
     }
 }

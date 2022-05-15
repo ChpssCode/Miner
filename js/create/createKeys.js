@@ -8,6 +8,7 @@ function createKeys(refer) {
        "W": refer.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W),
        "A": refer.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A),
        "S": refer.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S),
-       "D": refer.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D)
+       "D": refer.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D),
+       "C": refer.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.C)
    };
 }
