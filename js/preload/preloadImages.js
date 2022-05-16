@@ -10,5 +10,8 @@ function preloadImages(refer) {
     refer.load.image("store", "assets/store.png");
     refer.load.image("cursor", "assets/Cursor.png");
     refer.load.image("factory", "assets/factory.png");
-    refer.load.image("convert", "assets/convert.png")
+    refer.load.image("convert", "assets/convert.png");
+    refer.load.image("menuBackground", "assets/menuBackground.png");
+    refer.load.image("logo", "assets/logo.png")
+    refer.load.image("homeButton", "assets/homeButton.png")
 }

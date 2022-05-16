@@ -29,7 +29,6 @@ function createFactoryButton(refer) {
  refer.input.keyboard.on("keydown-F", () => {
     if(statsStatus === true) {
        refer.speedText.setVisible(false)
-       refer.keysText.setVisible(false)
        refer.waterText.setVisible(false)
        refer.fuelText.setVisible(false)
        refer.convertWaterToFuel.setVisible(true)
@@ -40,7 +39,6 @@ function createFactoryButton(refer) {
     }
     else if(statsStatus === false) {
        refer.speedText.setVisible(true)
-       refer.keysText.setVisible(true)
        refer.waterText.setVisible(true)
        refer.fuelText.setVisible(true)
         refer.convertWaterToFuel.setVisible(false)

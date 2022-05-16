@@ -20,6 +20,7 @@ class Game extends Phaser.Scene
     this.input.setDefaultCursor('url(assets/Cursor.png), pointer');
     //Set Physics
     createText(this);
+    menu(this);
     this.physics.world.setBounds(0,0, 2000, 2000, true, true, true, true)
     
     //Set Variables
