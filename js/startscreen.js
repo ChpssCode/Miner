@@ -14,14 +14,15 @@ class Startscreen extends Phaser.Scene
     }
 
     create() {
-    this.physics.add.image(955, 380, "logo").setScale(1.4).setDepth(3);
-    this.play = this.physics.add.image(955, 575, "play").setScale(1);
-    this.add.tileSprite(1000, 0, 2000, 2000, "background");
+    this.logo = this.physics.add.image(window.innerWidth / 2, window.innerHeight / 2.5, "logo").setScale(1.4).setDepth(3);
+    this.play = this.physics.add.image(window.innerWidth / 2, window.innerHeight / 1.7, "play").setScale(1);
+    this.add.tileSprite(window.innerWidth / 2, 0, 7000, 7000, "background");
 
     this.play.setInteractive();
     this.play.on("pointerup", () => this.scene.start('Game') )
     }
     update() {
-
+        this.logo.setPosition(window.innerWidth / 2, window.innerHeight / 2.5)
+        this.play.setPosition(window.innerWidth / 2, window.innerHeight / 1.7)
     }
 }
