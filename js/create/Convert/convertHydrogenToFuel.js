@@ -4,6 +4,7 @@
  */
 
 function convertHydrogenToFuel(refer) {
+     refer.convertHydrogenToFuel = refer.add.text(32, 80).setScrollFactor(0).setFontSize(16).setColor('#ffffff');
      refer.convertHydrogenToFuel.setVisible(false);
      refer.convertHydrogenToFuelButton = refer.add.image(600, 80, "convert").setScrollFactor(0).setScale(0.3);
      refer.convertHydrogenToFuelButton.setVisible(false)

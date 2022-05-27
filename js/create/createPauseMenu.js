@@ -3,7 +3,7 @@
  * @param refer refers to the 'create' function context
  */
 
-function menu(refer) {
+function createPauseMenu(refer) {
  refer.menuBackground = refer.add.image(window.innerWidth / 2, window.innerHeight / 2, "menuBackground").setScrollFactor(0).setScale(1.4).setDepth(5).setVisible(false);
  refer.logo = refer.add.image(window.innerWidth / 2, window.innerHeight / 7, "logo").setScrollFactor(0).setDepth(6).setVisible(false);
  refer.homeButton = refer.add.image(window.innerWidth / 2, window.innerHeight / 3.5, "homeButton").setScrollFactor(0).setScale(0.3).setDepth(6).setVisible(false);

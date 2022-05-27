@@ -4,6 +4,7 @@
  */
 
 function convertWaterToFuel(refer) {
+     refer.convertWaterToFuel = refer.add.text(32, 32).setScrollFactor(0).setFontSize(16).setColor('#ffffff');
      refer.convertWaterToFuel.setVisible(false);
      refer.convertWaterToFuelButton = refer.add.image(600, 32, "convert").setScrollFactor(0).setScale(0.3);
      refer.convertWaterToFuelButton.setVisible(false)
