@@ -5,8 +5,9 @@
 
 function updateText(refer) {
     refer.speedText.setText('Speed: ' + refer.ship.body.speed);
-    refer.fuelText.setText('Fuel: ' + refer.fuel);
-    refer.convertWaterToFuel.setText(refer.water + ' Water Molecule = ' + refer.water * 2 + ' Hydrogen and ' + refer.water + ' Oxygen');
-    refer.convertHydrogenToFuel.setText(refer.hydrogen + ' Hydrogen = ' + refer.hydrogen + ' Fuel');
-    refer.waterText.setText('Water: ' + refer.water);
+    refer.fuelText.setText('Fuel: ' + refer.getData.fuel);
+    refer.convertWaterToFuel.setText(refer.getData.water + ' Water Molecule = ' + refer.getData.water * 2 + ' Hydrogen and ' + refer.getData.water + ' Oxygen');
+    refer.convertHydrogenToFuel.setText(refer.getData.hydrogen + ' Hydrogen = ' + refer.getData.hydrogen + ' Fuel');
+    refer.waterText.setText('Water: ' + refer.getData.water);
+    localStorage.setItem("gameData", JSON.stringify({'oxygen': refer.getData.oxygen, 'hydrogen': refer.getData.hydrogen, 'water': refer.getData.water, 'fuel': refer.getData.fuel, 'counter': refer.getData.counter}))
 }

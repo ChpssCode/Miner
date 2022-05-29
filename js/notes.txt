@@ -15,3 +15,9 @@ while(speed > 0) {
 }
 
 -------------------------------------------------------------------------------------------------
+
+localStorage.removeItem('oxygen', 0);
+   localStorage.removeItem('hydrogen', 0);
+   localStorage.removeItem('water', 0);
+   localStorage.removeItem('fuel', 2000);
+   localStorage.removeItem('counter', 0);

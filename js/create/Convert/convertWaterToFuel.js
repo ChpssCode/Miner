@@ -10,13 +10,13 @@ function convertWaterToFuel(refer) {
      refer.convertWaterToFuelButton.setVisible(false)
      refer.convertWaterToFuelButton.setInteractive();
      refer.convertWaterToFuelButton.on("pointerdown", () => {
-          if(refer.water === 0) {
+          if(refer.getData.water === 0) {
              console.log("You can no longer convert any more material");
           }
-          else if(refer.water >= 1) {
-               refer.water-=1;
-               refer.oxygen++;
-               refer.hydrogen+=2;
+          else if(localStorage.getItem('water') >= 1) {
+               refer.getData.hydrogen+=2
+               refer.getData.water--
+               refer.getData.oxygen++
           }
      })
 }

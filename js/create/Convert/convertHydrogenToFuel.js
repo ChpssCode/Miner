@@ -10,12 +10,12 @@ function convertHydrogenToFuel(refer) {
      refer.convertHydrogenToFuelButton.setVisible(false)
      refer.convertHydrogenToFuelButton.setInteractive();
      refer.convertHydrogenToFuelButton.on("pointerdown", () => {
-          if(refer.hydrogen === 0) {
+          if(refer.getData.hydrogen === 0) {
              console.log("You can no longer convert any more material");
           }
-          else if(refer.hydrogen >= 1) {
-               refer.hydrogen-=1;
-               refer.fuel+=1;
+          else if(refer.getData.hydrogen >= 1) {
+               refer.getData.hydrogen--
+               refer.getData.fuel++
           }
      })
 }

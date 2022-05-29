@@ -8,6 +8,6 @@ function createTerra(refer) {
 
   refer.terra.setInteractive();
   refer.terra.on("pointerup", () => {
-    refer.water+=1;
+    localStorage.setItem('water', refer.getData.water++)
   })
 }
