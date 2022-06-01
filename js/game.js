@@ -13,6 +13,9 @@ class Game extends Phaser.Scene
     }
 
     create() {
+    if(!localStorage.getItem("gameData") === undefined || !localStorage.getItem("gameData")) {
+          localStorage.setItem("gameData", JSON.stringify({'oxygen': 0, 'hydrogen': 0, 'water': 0, 'fuel': 2000, 'counter': 0}))
+    }
     //Create foundation
     createVariables(this);
     createWorld(this);

@@ -4,5 +4,8 @@
  */
 
 function createVariables(refer) {
-    refer.getData = Object.assign({}, JSON.parse(localStorage.getItem("gameData") || {}));
+   refer.getData = Object.assign({}, JSON.parse(localStorage.getItem("gameData") || {}));
+   setInterval(function() {
+        localStorage.setItem("gameData", JSON.stringify(refer.getData))
+   }, 1);  
 } 
