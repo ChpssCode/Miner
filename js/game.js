@@ -14,10 +14,10 @@ class Game extends Phaser.Scene
 
     create() {
     if(!localStorage.getItem("gameData")) {
-          localStorage.setItem("gameData", JSON.stringify({'oxygen': 0, 'hydrogen': 0, 'water': 0, 'fuel': 2000, 'counter': 0}))
+          localStorage.setItem("gameData", JSON.stringify({'oxygen': 0, 'hydrogen': 0, 'water': 0, 'fuel': 2000, 'counter': 0, 'ship_x': 0, 'ship_y': 0}))
     }
-    createVariables(this);
     //Create foundation
+    createVariables(this);
     createWorld(this);
     createKeys(this);
     createText(this);
@@ -29,9 +29,10 @@ class Game extends Phaser.Scene
     createShip(this);
     createFactoryButton(this);
     createTerra(this);
+    createDimidium(this);
     
     //create conversions
-    convertWaterToFuel(this);
+    convertWaterToOH(this);
     convertHydrogenToFuel(this);
     }
     update() {

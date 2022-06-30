@@ -4,7 +4,7 @@
  */
 
 function createTerra(refer) {
- refer.terra = refer.physics.add.image(500,700, 'terra').setScale(0.3).setDepth(2);
+ refer.terra = refer.physics.add.image(200, 200, 'terra').setScale(0.3).setDepth(2);
 
   refer.terra.setInteractive();
   refer.terra.on("pointerup", () => {

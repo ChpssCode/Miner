@@ -28,4 +28,6 @@ function shipMovement(refer) {
     {
         refer.ship.setAngularVelocity(0);
     }
+    refer.getData.ship_x = refer.ship.x;
+    refer.getData.ship_y = refer.ship.y;
 }

@@ -4,5 +4,5 @@
  */
 
 function createBackground(refer) {
- refer.background = refer.add.tileSprite(1000, 1000, 2000, 2000, "background");
+ refer.background = refer.add.tileSprite(2000, 2000, 4000, 4000, "background");
 }

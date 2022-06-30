@@ -12,16 +12,20 @@ function createFactoryButton(refer) {
        refer.speedText.setVisible(false)
        refer.waterText.setVisible(false)
        refer.fuelText.setVisible(false)
-       refer.convertWaterToFuel.setVisible(true)
-       refer.convertWaterToFuelButton.setVisible(true)
+       refer.convertWaterToOH.setVisible(true)
+       refer.convertWaterToOHButton.setVisible(true)
+       refer.convertHydrogenToFuel.setVisible(true)
+       refer.convertHydrogenToFuelButton.setVisible(true)
        statsStatus = false;
     }
     else if(statsStatus === false) {
        refer.speedText.setVisible(true)
        refer.waterText.setVisible(true)
        refer.fuelText.setVisible(true)
-       refer.convertWaterToFuel.setVisible(false)
-       refer.convertWaterToFuelButton.setVisible(false)
+       refer.convertWaterToOH.setVisible(false)
+       refer.convertWaterToOHButton.setVisible(false)
+       refer.convertHydrogenToFuel.setVisible(false)
+       refer.convertHydrogenToFuelButton.setVisible(false)
        statsStatus = true;
     }
    console.log("Hi")
@@ -31,8 +35,8 @@ function createFactoryButton(refer) {
        refer.speedText.setVisible(false)
        refer.waterText.setVisible(false)
        refer.fuelText.setVisible(false)
-       refer.convertWaterToFuel.setVisible(true)
-       refer.convertWaterToFuelButton.setVisible(true)
+       refer.convertWaterToOH.setVisible(true)
+       refer.convertWaterToOHButton.setVisible(true)
        refer.convertHydrogenToFuel.setVisible(true)
        refer.convertHydrogenToFuelButton.setVisible(true)
        statsStatus = false;
@@ -41,8 +45,8 @@ function createFactoryButton(refer) {
        refer.speedText.setVisible(true)
        refer.waterText.setVisible(true)
        refer.fuelText.setVisible(true)
-        refer.convertWaterToFuel.setVisible(false)
-        refer.convertWaterToFuelButton.setVisible(false)
+        refer.convertWaterToOH.setVisible(false)
+        refer.convertWaterToOHButton.setVisible(false)
         refer.convertHydrogenToFuel.setVisible(false)
         refer.convertHydrogenToFuelButton.setVisible(false)
        statsStatus = true;

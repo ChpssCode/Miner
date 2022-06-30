@@ -14,4 +14,5 @@ function preloadImages(refer) {
     refer.load.image("menuBackground", "assets/menuBackground.png");
     refer.load.image("logo", "assets/logo.png")
     refer.load.image("homeButton", "assets/homeButton.png")
+    refer.load.image("Dimidium", "assets/Dimidium.png")
 }

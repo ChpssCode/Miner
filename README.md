@@ -6,4 +6,3 @@ I made this a public repository because I wanted others to critique and maybe ev
 
 ## What inspired Miner?
 Truly, Miner was inspired by my love for science fiction and the imaginary worlds I makeup in my head(probably when I am not supposed to lol). I also took a lot of inspiration from shows/movies like Star Wars, Another Life, and one of the best books I have personally ever read in my opinion, the Ocean between the Stars
-
