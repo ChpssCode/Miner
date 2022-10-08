@@ -1,8 +1,36 @@
-# Miner
-Miner is a 2D Idle-inspired clicker game we’re you’re goal is to conquer, upgrade, and farm planets resources in exchange for a virtual in game currency. With this currency, you can conquer, upgrade, and farm new planets until you eventually conquer every planet in the game and become the richest player in the galaxy!
+# Miner Game Codebase
 
-## Why is this a public repository?
-I made this a public repository because I wanted others to critique and maybe even learn from my progress with my game. This project was also made for a school project.
+This quick-start project template combines Phaser 3.50 with [TypeScript 4](https://www.typescriptlang.org/) and uses [Rollup](https://rollupjs.org) for bundling.
 
-## What inspired Miner?
-Truly, Miner was inspired by my love for science fiction and the imaginary worlds I makeup in my head(probably when I am not supposed to lol). I also took a lot of inspiration from shows/movies like Star Wars, Another Life, and one of the best books I have personally ever read in my opinion, the Ocean between the Stars
+## Requirements
+
+[Node.js](https://nodejs.org) is required to install dependencies and run scripts via `npm`.
+
+## Available Commands
+
+| Command | Description |
+|---------|-------------|
+| `npm install` | Install project dependencies |
+| `npm run watch` | Build project and open web server running project, watching for changes |
+| `npm run dev` | Builds project and open web server, but do not watch for changes |
+| `npm run build` | Builds code bundle with production settings (minification, no source maps, etc..) |
+
+## Writing Code
+
+After cloning the repo, run `npm install` from your project directory. Then, you can start the local development
+server by running `npm run watch`. The first time you run this you should see the following demo run:
+
+![Screenshot](screenshot.png "Phaser 3 Example")
+
+After starting the development server with `npm run watch`, you can edit any files in the `src` folder
+and Rollup will automatically recompile and reload your server (available at `http://localhost:10001`
+by default).
+
+## Configuring Rollup
+
+* Edit the file `rollup.config.dev.js` to edit the development build.
+* Edit the file `rollup.config.dist.js` to edit the distribution build.
+
+You will find lots of comments inside the rollup config files to help you do this.
+
+Note that due to the build process involved, it can take around 20 seconds to build the initial bundle. Times will vary based on CPU and local drive speeds. The development config does not minify the code in order to save build time, but it does generate source maps. If you do not require these, disable them in the config to speed it up further.
