@@ -14,15 +14,21 @@ import Terra from "./create/Entity/terra";
 import Player from "./create/Entity/player";
 //Import UI
 import PauseMenu from "./create/UI/pausemenu";
+import Stats from "./create/UI/stats";
 
 
 //Import Update Functions
 //Import Entities
-import PlayerMovement from "./update/Entity/player";
+import Player_Update from "./update/Entity/player";
+//Import UI 
+import Stats_Update from "./update/UI/stats";
 
 export class Game extends Phaser.Scene
 {
     getData
+    speedText
+    waterText
+    fuelText
     constructor ()
     {
         super('Game');
@@ -36,18 +42,19 @@ export class Game extends Phaser.Scene
     create()
     {
         if (!localStorage.getItem("gameData")) {
-            localStorage.setItem("gameData", JSON.stringify({ 'oxygen': 0, 'hydrogen': 0, 'water': 0, 'fuel': 2000, 'counter': 0, 'ship_x': 0, 'ship_y': 0 }));
+            localStorage.setItem("gameData", JSON.stringify({ 'oxygen': 0, 'hydrogen': 0, 'water': 0, 'fuel': 2000, 'counter': 0, 'player_x': 0, 'player_y': 0 }));
         }
         this.getData = Object.assign({}, JSON.parse(localStorage.getItem("gameData")));
         setInterval(
             () => { localStorage.setItem("gameData", JSON.stringify(this.getData)) }
             , 1000);  
     //UI
-    CreateKeys(this);
     PauseMenu(this);
+    Stats(this);
 
     //Initialization
     World(this); 
+    CreateKeys(this);
 
     //Entities
     Player(this);
@@ -55,7 +62,8 @@ export class Game extends Phaser.Scene
      }
 
     update () {
-      PlayerMovement(this); 
+      Player_Update(this); 
+      Stats_Update(this);
     }
 }
 class Startscreen extends Phaser.Scene {

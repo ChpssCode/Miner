@@ -4,7 +4,6 @@ export default (context) => {
     context.terra.setInteractive();
     context.terra.on("pointerup", () => {
         context.getData.water++;
-        context.terra.setScale(0.31);
     })
 }
 

@@ -1,10 +1,10 @@
 export default (getContext) => {
-    getContext.ship = getContext.physics.add.image(0, 0, 'ship').setScale(0.3).setDepth(3);
-    getContext.camera = getContext.cameras.main.startFollow(getContext.ship);
+    getContext.player = getContext.physics.add.image(getContext.getData.player_x, getContext.getData.player_y, 'player').setScale(0.3).setDepth(3);
+    getContext.camera = getContext.cameras.main.startFollow(getContext.player);
 
-    getContext.ship.body.collideWorldBounds = true;
-    getContext.ship.setDamping(true);
-    getContext.ship.setDrag(1);
-    getContext.ship.setMaxVelocity(200);
+    getContext.player.body.collideWorldBounds = true;
+    getContext.player.setDamping(true);
+    getContext.player.setDrag(1);
+    getContext.player.setMaxVelocity(200);
 }
 
