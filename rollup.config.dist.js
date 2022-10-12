@@ -3,6 +3,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 import typescript from 'rollup-plugin-typescript2';
 import hot from 'rollup-plugin-hot';
+const { nodeResolve } = require("@rollup/plugin-node-resolve");
 
 export default {
 
@@ -34,12 +35,13 @@ export default {
             'typeof PLUGIN_FBINSTANT': JSON.stringify(false),
             'typeof FEATURE_SOUND': JSON.stringify(true)
         }),
+
         //  Parse our .ts source files
         resolve({
             extensions: [ '.ts', '.tsx' ]
         }),
         hot(),
-
+        nodeResolve(),
         //  We need to convert the Phaser 3 CJS modules into a format Rollup can use:
         commonjs({
             include: [
