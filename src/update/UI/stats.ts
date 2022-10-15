@@ -1,4 +1,4 @@
-export default (getContext) => {
+export default function Stats_Update(getContext: any) {
     getContext.speedText.setText("Speed: " + getContext.player.body.speed)
     getContext.fuelText.setText('Fuel: ' + getContext.getData.fuel);
     /*
