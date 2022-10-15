@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <img src="https://raw.githubusercontent.com/ChpssCode/Miner/main/public/assets/Terra.png" width=600>
+  <img src="https://raw.githubusercontent.com/ChpssCode/Miner/main/public/assets/Terra.png" width=300>
   Miner Game Codebase
   <br>
 </h1>
