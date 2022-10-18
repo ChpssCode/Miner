@@ -5,8 +5,9 @@ import CreateKeys from "./keys"
 
 import Preload from "./preload/preload"
 
-import Terra from "./create/Entity/Planets/terra";
-import Presley_Planet from "./create/Entity/Planets/presley_planet"
+import Earth from "./create/Entity/earth";
+import Venus from "./create/Entity/venus";
+import Sun from "./create/Entity/sun"
 
 import Player from "./create/Entity/player";
 
@@ -54,8 +55,9 @@ export class Game extends Phaser.Scene
     CreateKeys(this);
 
     Player(this);
-    Terra(this);
-    Presley_Planet(this);
+    Earth(this);
+    Venus(this);
+    Sun(this);
      }
 
     update () {
@@ -67,6 +69,7 @@ class Startscreen extends Phaser.Scene {
     logo: any;
     play: any;
     theme: any;
+    discord: any;
     constructor() {
         super({
             key: "Startscreen"
@@ -76,6 +79,7 @@ class Startscreen extends Phaser.Scene {
     preload() {
         this.load.image("background", "assets/background.png")
         this.load.image("logo", "assets/logo.png");
+        this.load.image("discord", "assets/discord-logo.png");
         this.load.image("play", "assets/play.png");
         this.load.audio('theme', 'assets/bg_music.ogg');
     }
@@ -88,6 +92,10 @@ class Startscreen extends Phaser.Scene {
         this.add.text(0, window.innerHeight / 1.2, "How to Play: \n \n Left Click: Mine/Click \n W/S: Accelerate/Deccelerate \n A/D: Left/Right \n F: Factory \n ESC: Game Menu", { fontFamily: "'Open Sans', sans-serif, 'Roboto', sans-serif, 'Roboto Mono', monospace" }).setScrollFactor(0).setFontSize(18).setColor('#ffffff').setBackgroundColor("#000000");
         this.logo = this.physics.add.image(window.innerWidth / 2, window.innerHeight / 2.5, "logo").setScale(1.4).setDepth(3);
         this.play = this.physics.add.image(window.innerWidth / 2, window.innerHeight / 1.7, "play").setScale(1);
+        this.discord = this.add.image(1850, window.innerHeight / 1.06, "discord").setScale(0.3).setInteractive();
+        this.discord.on("pointerup", () => {
+            window.open('https://discord.com/invite/5PfQSmsT2w', '_blank');
+        })
         this.theme = this.sound.add('theme');
         this.theme.play()
         this.play.setInteractive();
