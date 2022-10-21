@@ -46,6 +46,7 @@ export class Game extends Phaser.Scene
 
     create()
     {
+        localStorage.clear();
         if (!localStorage.getItem("gameData")) {
             localStorage.setItem("gameData", JSON.stringify({ 'oxygen': 0, 'hydrogen': 0, 'water': 0, 'fuel': 10000, 'counter': 0, 'player_x': 0, 'player_y': 0 }));
         }
