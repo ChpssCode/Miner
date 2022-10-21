@@ -5,9 +5,15 @@ import CreateKeys from "./keys"
 
 import Preload from "./preload/preload"
 
-import Earth from "./create/Entity/earth";
-import Venus from "./create/Entity/venus";
-import Sun from "./create/Entity/sun"
+import Earth from "./create/Entity/Planets/earth";
+import Venus from "./create/Entity/Planets/venus";
+import Sun from "./create/Entity/Planets/sun"
+import Mercury from "./create/Entity/Planets/mercury";
+import Mars from "./create/Entity/Planets/mars";
+import Jupiter from "./create/Entity/Planets/jupiter";
+import Saturn from "./create/Entity/Planets/saturn";
+import Uranus from "./create/Entity/Planets/uranus";
+import Neptune from "./create/Entity/Planets/neptune";
 
 import Player from "./create/Entity/player";
 
@@ -24,7 +30,6 @@ export class Game extends Phaser.Scene
     speedText = String;
     waterText = String;
     fuelText = String;
-    this: any;
     StaticInts = {
           playerDepth: 3,
           planetDepth: 2,
@@ -42,7 +47,7 @@ export class Game extends Phaser.Scene
     create()
     {
         if (!localStorage.getItem("gameData")) {
-            localStorage.setItem("gameData", JSON.stringify({ 'oxygen': 0, 'hydrogen': 0, 'water': 0, 'fuel': 2000, 'counter': 0, 'player_x': 0, 'player_y': 0 }));
+            localStorage.setItem("gameData", JSON.stringify({ 'oxygen': 0, 'hydrogen': 0, 'water': 0, 'fuel': 10000, 'counter': 0, 'player_x': 0, 'player_y': 0 }));
         }
         this.getData = Object.assign({}, JSON.parse(localStorage.getItem("gameData") || '{}'));
         setInterval(
@@ -58,6 +63,12 @@ export class Game extends Phaser.Scene
     Earth(this);
     Venus(this);
     Sun(this);
+    Mercury(this);
+    Mars(this);
+    Jupiter(this);
+    Saturn(this);
+    Uranus(this);
+    Neptune(this);
      }
 
     update () {
