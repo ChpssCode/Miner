@@ -5,18 +5,11 @@ import CreateKeys from "./keys"
 
 import Preload from "./preload/preload"
 
-import Earth from "./create/Entity/Planets/earth";
-import Venus from "./create/Entity/Planets/venus";
-import Sun from "./create/Entity/Planets/sun"
-import Mercury from "./create/Entity/Planets/mercury";
-import Mars from "./create/Entity/Planets/mars";
-import Jupiter from "./create/Entity/Planets/jupiter";
-import Saturn from "./create/Entity/Planets/saturn";
-import Uranus from "./create/Entity/Planets/uranus";
-import Neptune from "./create/Entity/Planets/neptune";
-
 import Player from "./create/Entity/player";
 
+import planets from './create/Entity/planets';
+
+import Factory from "./create/UI/factory";
 import PauseMenu from "./create/UI/pausemenu";
 import Stats from "./create/UI/stats";
 
@@ -46,9 +39,8 @@ export class Game extends Phaser.Scene
 
     create()
     {
-        localStorage.clear();
         if (!localStorage.getItem("gameData")) {
-            localStorage.setItem("gameData", JSON.stringify({ 'oxygen': 0, 'hydrogen': 0, 'water': 0, 'fuel': 10000, 'counter': 0, 'player_x': 0, 'player_y': 0 }));
+            localStorage.setItem("gameData", JSON.stringify({ 'oxygen': 0, 'hydrogen': 0, 'water': 0, 'fuel': 10000, 'counter': 0, 'player_x': 3000, 'player_y': 1650 }));
         }
         this.getData = Object.assign({}, JSON.parse(localStorage.getItem("gameData") || '{}'));
         setInterval(
@@ -61,15 +53,8 @@ export class Game extends Phaser.Scene
     CreateKeys(this);
 
     Player(this);
-    Earth(this);
-    Venus(this);
-    Sun(this);
-    Mercury(this);
-    Mars(this);
-    Jupiter(this);
-    Saturn(this);
-    Uranus(this);
-    Neptune(this);
+    planets(this);
+    Factory(this);
      }
 
     update () {
@@ -89,11 +74,11 @@ class Startscreen extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image("background", "assets/background.png")
-        this.load.image("logo", "assets/logo.png");
-        this.load.image("discord", "assets/discord-logo.png");
-        this.load.image("play", "assets/play.png");
-        this.load.audio('theme', 'assets/bg_music.ogg');
+        this.load.image("background", "assets/Backgrounds/background.png")
+        this.load.image("logo", "assets/Logos/logo_full.png");
+        this.load.image("discord", "assets/Logos/discord-logo.png");
+        this.load.image("play", "assets/UI/play.png");
+        this.load.audio('theme', 'assets/bg_music.mp3');
     }
 
     create() {

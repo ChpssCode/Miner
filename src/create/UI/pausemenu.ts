@@ -1,4 +1,4 @@
-export default (getContext) => {
+export default (getContext: any) => {
     getContext.menuBackground = getContext.add.image(window.innerWidth / 2, window.innerHeight / 2, "menuBackground").setScrollFactor(0).setScale(1.4).setDepth(5).setVisible(false);
     getContext.logo = getContext.add.image(window.innerWidth / 2, window.innerHeight / 7, "logo").setScrollFactor(0).setDepth(6).setVisible(false);
     getContext.homeButton = getContext.add.image(window.innerWidth / 2, window.innerHeight / 3.5, "homeButton").setScrollFactor(0).setScale(0.3).setDepth(6).setVisible(false);
@@ -16,7 +16,7 @@ export default (getContext) => {
             getContext.menuBackground.setVisible(true)
             getContext.logo.setVisible(true)
             getContext.homeButton.setVisible(true)
-            getContext.ship.setVelocity(0,)
+            
             menuStatus = true;
             console.log("On")
         }
