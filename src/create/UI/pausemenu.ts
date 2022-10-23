@@ -16,7 +16,6 @@ export default (getContext: any) => {
             getContext.menuBackground.setVisible(true)
             getContext.logo.setVisible(true)
             getContext.homeButton.setVisible(true)
-            
             menuStatus = true;
             console.log("On")
         }

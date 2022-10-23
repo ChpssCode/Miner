@@ -16,6 +16,7 @@ import Stats from "./create/UI/stats";
 import Player_Update from "./update/Entity/player";
 
 import Stats_Update from "./update/UI/stats";
+import Factory_Update from "./update/UI/factory";
 
 export class Game extends Phaser.Scene
 {
@@ -45,7 +46,7 @@ export class Game extends Phaser.Scene
         this.getData = Object.assign({}, JSON.parse(localStorage.getItem("gameData") || '{}'));
         setInterval(
             () => { localStorage.setItem("gameData", JSON.stringify(this.getData)) }
-            , 1000);  
+            , 1);  
     PauseMenu(this);
     Stats(this);
 
@@ -60,6 +61,7 @@ export class Game extends Phaser.Scene
     update () {
       Player_Update(this); 
       Stats_Update(this);
+      Factory_Update(this);
     }
 }
 class Startscreen extends Phaser.Scene {
