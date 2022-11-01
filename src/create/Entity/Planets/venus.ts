@@ -1,9 +1,9 @@
-export default (getContext: any) => {
-    getContext.presley_planet = getContext.physics.add.image(3750, 3000, 'venus').setScale(1.2).setDepth(getContext.StaticInts.planetDepth);
+import Planet  from "../planet";
 
-    getContext.presley_planet.setInteractive();
-    getContext.presley_planet.on("pointerup", () => {
+export default (getContext: any) => {
+    getContext.venus = new Planet(getContext, "venus", 3750, 3000);
+
+    getContext.venus.on("pointerup", () => {
       
     })
-    return;
 }

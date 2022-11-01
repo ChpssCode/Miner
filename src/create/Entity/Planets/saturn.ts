@@ -1,7 +1,8 @@
-export default (getContext: any) => {
-    getContext.saturn = getContext.physics.add.image(5250, 3000, 'saturn').setScale(0.8).setDepth(getContext.StaticInts.planetDepth);
+import Planet from "../planet";
 
-    getContext.saturn.setInteractive();
+export default (getContext: any) => {
+    getContext.saturn = new Planet(getContext, "saturn", 5250, 3000);
+
      getContext.saturn.on("pointerup", () => {
 
     })

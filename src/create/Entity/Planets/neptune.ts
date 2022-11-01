@@ -1,7 +1,8 @@
-export default (getContext: any) => {
-    getContext.neptune = getContext.physics.add.image(300, 5700, 'neptune').setScale(1.3).setDepth(getContext.StaticInts.planetDepth);
+import Planet from "../planet";
 
-    getContext.neptune.setInteractive();
+export default (getContext: any) => {
+    getContext.neptune = new Planet(getContext, "neptune", 300, 5700);
+
     getContext.neptune.on("pointerup", () => {
 
     })

@@ -1,8 +1,9 @@
+import Planet from "../planet";
+
 export default (getContext: any) => {
-    getContext.mercury = getContext.physics.add.image(2625, 3000, 'mercury').setScale(0.8).setDepth(getContext.StaticInts.planetDepth);
+    getContext.mercury = new Planet(getContext, "mercury", 2625, 3000);
 
-    getContext.mercury.setInteractive();
     getContext.mercury.on("pointerup", () => {
-
+        getContext.getData.iron++;
     })
 }

@@ -1,7 +1,8 @@
-export default (getContext: any) => {
-    getContext.mars = getContext.physics.add.image(1650, 3000, 'mars').setScale(1).setDepth(getContext.StaticInts.planetDepth);
+import Planet from "../planet";
 
-    getContext.mars.setInteractive();
+export default (getContext: any) => {
+    getContext.mars = new Planet(getContext, "mars", 1650, 3000);
+
     getContext.mars.on("pointerup", () => {
 
     })

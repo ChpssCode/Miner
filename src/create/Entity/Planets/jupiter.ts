@@ -1,8 +1,9 @@
+import Planet from "../planet";
+
 export default (getContext: any) => {
-    getContext.jupiter = getContext.physics.add.image(1225, 1500, 'jupiter').setScale(2).setDepth(getContext.StaticInts.planetDepth);
+    getContext.jupiter = new Planet(getContext, "jupiter", 1225, 1500);
 
-    getContext.jupiter.setInteractive();
     getContext.jupiter.on("pointerup", () => {
-
+          console.log("Clicked Jupiter");
     })
 }

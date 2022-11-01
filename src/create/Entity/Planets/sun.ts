@@ -1,9 +1,9 @@
-export default (getContext: any) => {
-    getContext.sun = getContext.physics.add.image(3000, 3000, 'sun').setDepth(getContext.StaticInts.planetDepth);
+import Planet from "../planet";
 
-    getContext.sun.setInteractive();
+export default (getContext: any) => {
+    getContext.sun = new Planet(getContext, "sun", 3000, 3000);
+
     getContext.sun.on("pointerup", () => {
       
     })
-    return;
 }

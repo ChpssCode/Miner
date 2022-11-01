@@ -1,8 +1,9 @@
-export default (getContext: any) => {
-    getContext.terra = getContext.physics.add.image(3000, 1700, 'earth').setScale(0.3).setDepth(getContext.StaticInts.planetDepth);
+import Planet from "../planet";
 
-    getContext.terra.setInteractive();
-    getContext.terra.on("pointerup", () => {
+export default (getContext: any) => {
+    getContext.earth = new Planet(getContext, "earth", 3000, 1700);
+
+    getContext.earth.on("pointerup", () => {
         getContext.getData.water++;
     })
 }
