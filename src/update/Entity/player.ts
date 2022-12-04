@@ -1,4 +1,4 @@
-export default (getContext) => {
+export default (getContext: any) => {
     if (getContext.keys.W.isDown && getContext.getData.fuel > 0) {
         getContext.physics.velocityFromRotation(getContext.player.rotation, 200, getContext.player.body.acceleration);
         getContext.player.setDrag(1);
