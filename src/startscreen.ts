@@ -30,7 +30,15 @@ export class Startscreen extends Phaser.Scene {
         this.add.text(0, this.height / 1.2, "How to Play: \n \n Left Click: Mine/Click \n W/S: Accelerate/Deccelerate \n A/D: Left/Right \n F: Factory \n ESC: Game Menu", { fontFamily: "'Open Sans', sans-serif, 'Roboto', sans-serif, 'Roboto Mono', monospace" }).setScrollFactor(0).setFontSize(18).setColor('#ffffff').setBackgroundColor("#000000");
         this.logo = this.physics.add.image(this.width / 2, this.height / 2.5, "logo").setScale(1.4).setDepth(3);
         this.mobileOff = this.physics.add.image(this.width / 2, this.height / 1.4, "mobileOff").setDepth(3).setScale(0.5).setInteractive();
-        this.mobileState = localStorage.setItem("mobileState", "false");
+        if(!localStorage.getItem("mobileState")) {
+            this.mobileState = localStorage.setItem("mobileState", "false");
+        }
+        else if(localStorage.getItem("mobileState") === "false") {
+                this.mobileOff.setTexture("mobileOff")
+        }
+        else if(localStorage.getItem("mobileState") === "true") {
+                this.mobileOff.setTexture("mobileOn")
+         }
         this.play = this.physics.add.image(this.width / 2, this.height / 1.7, "play").setScale(1).setInteractive();
         this.discord = this.add.image(1850, this.height / 1.06, "discord").setScale(0.3).setInteractive();
         this.discord.on("pointerup", () => {

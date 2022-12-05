@@ -25,5 +25,11 @@ export default (getContext: any) => {
     getContext.load.image("saturn", "src/assets/Planets/saturn.png");
     getContext.load.image("uranus", "src/assets/Planets/uranus.png");
     getContext.load.image("neptune", "src/assets/Planets/neptune.png");
+
+    //Keys
+    getContext.load.image("increase", "src/assets/UI/keys/increase.png")
+    getContext.load.image("turnLeft", "src/assets/UI/keys/turnLeft.png")
+    getContext.load.image("turnRight", "src/assets/UI/keys/turnRight.png")
+    getContext.load.image("brake", "src/assets/UI/keys/brake.png")
 }
 
