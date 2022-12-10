@@ -1,10 +1,13 @@
-export default (getContext: any) => {
+import { Input } from "phaser"
+
+export default function controls(getContext: any) {
+
     if(localStorage.getItem("mobileState") === "false") {
         getContext.keys = {
-        "W": getContext.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W),
-        "A": getContext.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A),
-        "S": getContext.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S),
-        "D": getContext.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D),
+        "W": getContext.input.keyboard.addKey(Input.Keyboard.KeyCodes.W),
+        "A": getContext.input.keyboard.addKey(Input.Keyboard.KeyCodes.A),
+        "S": getContext.input.keyboard.addKey(Input.Keyboard.KeyCodes.S),
+        "D": getContext.input.keyboard.addKey(Input.Keyboard.KeyCodes.D),
     };
     }
     else if(localStorage.getItem("mobileState") === "true") {

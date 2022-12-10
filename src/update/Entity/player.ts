@@ -1,4 +1,7 @@
+import { Input } from "phaser"
+
 export default (getContext: any) => {
+    let pointer = getContext.input.activePointer;
     if(localStorage.getItem("mobileState") === "false") {
         if (getContext.keys.W.isDown && getContext.getData.fuel > 0) {
         getContext.physics.velocityFromRotation(getContext.player.rotation, 200, getContext.player.body.acceleration);
@@ -22,30 +25,29 @@ export default (getContext: any) => {
        }
     }
     else if(localStorage.getItem("mobileState") === "true") {
-        getContext.keys.W.on("pointerup", () => {
-               if (getContext.getData.fuel > 0) {
-        getContext.physics.velocityFromRotation(getContext.player.rotation, 200, getContext.player.body.acceleration);
-        getContext.player.setDrag(1);
-        getContext.getData.fuel--;
-                 }
-        });
+        getContext.keys.W.on("pointerdown", () => {
+            getContext.physics.velocityFromRotation(getContext.player.rotation, 200, getContext.player.body.acceleration);
+            getContext.player.setDrag(1);
+            getContext.getData.fuel--;
+        })
         getContext.keys.S.on("pointerdown", () => {
-            getContext.player.setAcceleration(0);
+            getContext.player.setDrag(10);
         })
         getContext.keys.A.on("pointerdown", () => {
             getContext.player.setAngularVelocity(-300);
         })
-       getContext.keys.D.on("pointerdown", () => {
+        getContext.keys.D.on("pointerdown", () => {
             getContext.player.setAngularVelocity(300);
         })
-        getContext.keys.S.on("pointerdown", () => {
-            getContext.player.setDrag(0.5);
+        getContext.keys.A.on("pointerout", () => {
+            getContext.player.setAngularVelocity(0);
         })
-        
-        getContext.player.setAngularVelocity(0);
-       
+        getContext.keys.D.on("pointerout", () => {
+            getContext.player.setAngularVelocity(0);
+        })
     }
-    getContext.getData.player_x = getContext.player.x;
+getContext.getData.player_x = getContext.player.x;
     getContext.getData.player_y = getContext.player.y;
 }
+
 

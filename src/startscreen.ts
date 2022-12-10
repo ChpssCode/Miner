@@ -14,13 +14,13 @@ export class Startscreen extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image("background", "src/assets/Backgrounds/background.png")
-        this.load.image("logo", "src/assets/Logos/Logo_Full.png");
-        this.load.image("discord", "src/assets/Logos/discord-logo.png");
-        this.load.image("play", "src/assets/UI/play.png");
-        this.load.audio('theme', 'src/assets/bg_music.mp3');
-        this.load.image("mobileOff", 'src/assets/UI/mobileOff.png')
-        this.load.image("mobileOn", 'src/assets/UI/mobileOn.png')
+        this.load.image("background", "assets/Backgrounds/background.png")
+        this.load.image("logo", "assets/Logos/Logo_Full.png");
+        this.load.image("discord", "assets/Logos/discord-logo.png");
+        this.load.image("play", "assets/UI/play.png");
+        this.load.audio('theme', 'assets/bg_music.mp3');
+        this.load.image("mobileOff", 'assets/UI/mobileOff.png')
+        this.load.image("mobileOn", 'assets/UI/mobileOn.png')
     }
 
     create() {

@@ -1,9 +1,9 @@
-import 'phaser';
+import { Scene, Game } from 'phaser';
 
 import { Startscreen } from './startscreen';
 
 import World from "./world";
-import CreateKeys from "./keys"
+import controls from "./controls"
 
 import Preload from "./preload/preload"
 
@@ -20,7 +20,7 @@ import Player_Update from "./update/Entity/player";
 import Stats_Update from "./update/UI/stats";
 import Factory_Update from "./update/UI/factory";
 
-export class Game extends Phaser.Scene
+export class GameClient extends Scene
 {
     getData: any;
     speedText = String;
@@ -53,7 +53,7 @@ export class Game extends Phaser.Scene
     Stats(this);
 
     World(this); 
-    CreateKeys(this);
+    controls(this);
 
     Player(this);
     planets(this);
@@ -79,7 +79,7 @@ const game_config = {
             gravity: { y: 0 }
         }
     },
-    scene: [ Startscreen, Game ]
+    scene: [ Startscreen, GameClient ]
 };
 
-const GameClient = new Phaser.Game(game_config);
+new Game(game_config);
