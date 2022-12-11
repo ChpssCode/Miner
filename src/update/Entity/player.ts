@@ -26,12 +26,14 @@ export default (getContext: any) => {
     }
     else if(localStorage.getItem("mobileState") === "true") {
         getContext.keys.W.on("pointerdown", () => {
-            getContext.physics.velocityFromRotation(getContext.player.rotation, 200, getContext.player.body.acceleration);
-            getContext.player.setDrag(1);
-            getContext.getData.fuel--;
+            if(getContext.getData.fuel > 0) {
+                getContext.physics.velocityFromRotation(getContext.player.rotation, 200, getContext.player.body.acceleration);
+                getContext.player.setDrag(1);
+                getContext.getData.fuel--;
+            }
         })
         getContext.keys.S.on("pointerdown", () => {
-            getContext.player.setDrag(10);
+            getContext.player.setDrag(0.5);
         })
         getContext.keys.A.on("pointerdown", () => {
             getContext.player.setAngularVelocity(-300);
@@ -39,11 +41,14 @@ export default (getContext: any) => {
         getContext.keys.D.on("pointerdown", () => {
             getContext.player.setAngularVelocity(300);
         })
-        getContext.keys.A.on("pointerout", () => {
+        getContext.keys.A.on("pointerup", () => {
             getContext.player.setAngularVelocity(0);
         })
-        getContext.keys.D.on("pointerout", () => {
+        getContext.keys.D.on("pointerup", () => {
             getContext.player.setAngularVelocity(0);
+        })
+        getContext.keys.W.on("pointerup", () => {
+            getContext.player.setAcceleration(0);
         })
     }
 getContext.getData.player_x = getContext.player.x;
