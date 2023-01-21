@@ -1,6 +1,6 @@
 export default (getContext: any) => {
     // General
-    getContext.load.image("player", "assets/ship.gif");
+    getContext.load.atlas('atlas', 'assets/ship.png', 'assets/ship.json');
 
     // Backgrounds
     getContext.load.image("background", "assets/backgrounds/background.png");

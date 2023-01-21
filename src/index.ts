@@ -43,7 +43,7 @@ export class GameClient extends Scene
     create()
     {
         if (!localStorage.getItem("gameData")) {
-            localStorage.setItem("gameData", JSON.stringify({ 'oxygen': 0, 'hydrogen': 0, 'water': 0, 'iron': 0, 'counter': 0, 'player_x': 3000, 'player_y': 1650 }));
+            localStorage.setItem("gameData", JSON.stringify({ 'oxygen': 0, 'hydrogen': 0, 'water': 0, 'iron': 0, 'counter': 0, 'fuel': 10000, 'player_x': 3000, 'player_y': 1650 }));
         }
         this.getData = Object.assign({}, JSON.parse(localStorage.getItem("gameData") || '{}'));
         setInterval(

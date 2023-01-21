@@ -3,7 +3,7 @@ import { Input } from "phaser"
 export default (getContext: any) => {
     let pointer = getContext.input.activePointer;
     if(localStorage.getItem("mobileState") === "false") {
-        if (getContext.keys.W.isDown) {
+        if (getContext.keys.W.isDown && getContext.getData.fuel > 0) {
         getContext.physics.velocityFromRotation(getContext.player.rotation, 200, getContext.player.body.acceleration);
         getContext.player.setDrag(1);
         getContext.getData.fuel--;
