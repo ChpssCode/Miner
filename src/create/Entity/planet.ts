@@ -2,28 +2,31 @@ export default class Planet {
     constructor(getContext: any, planetName: String, planetX: Number, planetY: Number) {
       let scale: Number;
        if(planetName === "earth") {
-         scale = 0.3;
+         scale = 0.5;
        }
        else if(planetName === "mercury") {
-         scale = 0.6;
+         scale = 0.38;
       }
       else if(planetName === "mars") {
-        scale = 0.8;
+        scale = 0.53;
       }
       else if(planetName === "sun") {
-        scale = 3;
+        scale = 4;
       }
       else if(planetName === "uranus") {
-        scale = 1.4;
+        scale = 1.8;
       }
       else if(planetName === "neptune") {
-        scale = 1.4;
+        scale = 2;
       }
       else if(planetName === "jupiter") {
-        scale = 2.2;
+        scale = 3;
       }
       else if(planetName === "saturn") {
-        scale = 1.8;
+        scale = 2.5;
+      }
+       else if(planetName === "venus") {
+        scale = 1.95;
       }
       else {
         scale = 1;
